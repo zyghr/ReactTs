@@ -55,7 +55,7 @@ export default [
   },
   {
     path: '/dept',
-    name: '部门管理',
+    name: 'dept-manage',
     icon: 'table',
     component: './DeptManage',
   },

@@ -100,26 +100,10 @@ declare namespace API {
   };
 
   // 部门管理表格数据项
-  type DeptManageItem {
-    childNum?: number;
-    deleteMark?: string;
+  type deptListItem = {
     deptId?: string;
-    enCode?: string;
-      enabledMark?: number;
-      fullName?: string;
-      orgIdPath?: string;
-      orgPath?: string;
-      "pid": "E1F091BCEC6A66BBE05397D55C0A3B51",
-      "roleCodes": [
-      "juse1",
-      "admin",
-      "r181d6718ee4",
-      "r1826ce1fe52",
-      "r182c51ce8e7",
-      "r181cd93cede",
-      "r181cd914149",
-      "r181cd93aebc",
-      "r181cd95b9bd"
-    ]
+    deleteMark?: string;
+    fullName?: string;
+    roleCodes?: string[]
   }
 }
