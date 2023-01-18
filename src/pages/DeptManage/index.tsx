@@ -1,7 +1,7 @@
-import React from 'react';
-
+import { useState, useEffect } from 'react';
 import { Button, Table } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
+import { getDeptListData } from '@/services/ant-design-pro/deptManageApi';
 
 /*const dataSource = [
   {
@@ -312,8 +312,6 @@ import type { ColumnsType } from 'antd/es/table';
   },
 ];*/
 
-// const dataSource = getData();
-
 const columns: ColumnsType<API.deptListItem> = [
   {
     title: '部门名称',
@@ -331,8 +329,46 @@ const columns: ColumnsType<API.deptListItem> = [
     render: () => <Button type="primary">角色分配</Button>,
   },
 ];
+
 const DeptTable: React.FC = () => {
-  return <Table rowKey="deptId" dataSource={dataSource} columns={columns} />;
+  const [data, setData] = useState<API.deptListItem[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [params, setParams] = useState<API.TableParams>({
+    pagination: {
+      current: 1,
+      pageSize: 10,
+    },
+  });
+
+  useEffect(() => {
+    const fetchData = () => {
+      setLoading(true);
+      getDeptListData(params).then((res) => {
+        setData(res?.data || []);
+        setParams({
+          // pagination: {
+          //   current: res?.current,
+          //   pageSize: res?.pageSize,
+          // },
+          ...params,
+          total: res?.total,
+        });
+        setLoading(false);
+      });
+    };
+
+    fetchData();
+  }, [params?.pagination]);
+
+  return (
+    <Table
+      rowKey="deptId"
+      dataSource={data}
+      columns={columns}
+      loading={loading}
+      pagination={params.pagination}
+    />
+  );
 };
 
 export default DeptTable;

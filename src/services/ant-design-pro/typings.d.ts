@@ -99,11 +99,24 @@ declare namespace API {
     type?: NoticeIconItemType;
   };
 
+  type deptList = {
+    data?: deptListItem[];
+    total?: number;
+    success?: boolean;
+  };
+
   // 部门管理表格数据项
   type deptListItem = {
     deptId?: string;
     deleteMark?: string;
     fullName?: string;
-    roleCodes?: string[]
-  }
+    roleCodes?: string[];
+  };
+
+  type TableParams = {
+    pagination?: PageParams;
+    total?: number;
+    sortField?: string;
+    sortOrder?: string;
+  };
 }
