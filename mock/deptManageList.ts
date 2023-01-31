@@ -27,11 +27,11 @@ function getDept(req: Request, res: Response, u: string) {
   const { current = 1, pageSize = 10 } = req.query;
   const params = parse(realUrl, true).query as unknown as API.TableParams & API.deptListItem;
 
-  let dataSource = [...deptListDataSource].slice(
-    ((current as number) - 1) * (pageSize as number),
-    (current as number) * (pageSize as number),
-  );
-  // let dataSource = [...deptListDataSource];
+  // let dataSource = [...deptListDataSource].slice(
+  //   ((current as number) - 1) * (pageSize as number),
+  //   (current as number) * (pageSize as number),
+  // );
+  let dataSource = [...deptListDataSource];
 
   if (params.fullName) {
     dataSource = dataSource.filter((data) => data?.fullName?.includes(params.fullName || ''));
