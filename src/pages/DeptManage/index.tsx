@@ -62,7 +62,7 @@ const DeptTable: React.FC = () => {
       dataSource={data}
       columns={columns}
       loading={loading}
-      scroll={{scrollToFirstRowOnChange:true,y:'60vh'}}
+      scroll={{scrollToFirstRowOnChange:true,y:'62vh'}}
       pagination={
         {
           current: params?.pagination?.current,

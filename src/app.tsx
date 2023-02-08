@@ -1,5 +1,5 @@
 import Footer from '@/components/Footer';
-import RightContent from '@/components/RightContent';
+// import RightContent from '@/components/RightContent';
 import { LinkOutlined } from '@ant-design/icons';
 import type { Settings as LayoutSettings } from '@ant-design/pro-components';
 import { SettingDrawer } from '@ant-design/pro-components';
@@ -50,7 +50,8 @@ export async function getInitialState(): Promise<{
 // ProLayout 支持的api https://procomponents.ant.design/components/layout
 export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) => {
   return {
-    rightContentRender: () => <RightContent />,
+    // rightContentRender: () => <RightContent />,
+    rightContentRender: undefined,
     waterMarkProps: {
       content: initialState?.currentUser?.name,
     },

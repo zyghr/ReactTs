@@ -24,7 +24,9 @@ function getDept(req: Request, res: Response, u: string) {
     realUrl = req.url;
   }
 
-  const { current = 1, pageSize = 10 } = req.query;
+  // const { current = 1, pageSize = 10 } = req.query;
+  const { pageSize = 10 } = req.query;
+
   const params = parse(realUrl, true).query as unknown as API.TableParams & API.deptListItem;
 
   // let dataSource = [...deptListDataSource].slice(
