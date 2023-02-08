@@ -60,6 +60,22 @@ export default [
     component: './DeptManage',
   },
   {
+    path: '/permissionManagement',
+    name: 'PermissionManagement',
+    icon: 'table',
+    routes: [
+      {
+        path: '/permissionManagement',
+        redirect: '/permissionManagement/userManagement',
+      },
+      {
+        path: '/permissionManagement/userManagement',
+        name: 'userManagement',
+        component: './PermissionManagement/userManagement',
+      },
+    ],
+  },
+  {
     path: '*',
     layout: false,
     component: './404',
