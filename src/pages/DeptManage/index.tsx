@@ -65,6 +65,7 @@ const DeptTable: React.FC = () => {
       scroll={{scrollToFirstRowOnChange:true,y:'62vh'}}
       pagination={
         {
+          hideOnSinglePage: true,
           current: params?.pagination?.current,
           pageSize:params?.pagination?.pageSize,
           total: data?.length,

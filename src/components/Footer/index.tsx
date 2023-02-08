@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
   // const currentYear = new Date().getFullYear();
 
   return (
-    <div style={{textAlign: 'center',marginBottom: '10px', color:'#282C34'}}>
+    <div style={{ textAlign: 'center',marginBottom: 10, color: '#2851C1', fontWeight: 700 }}>
       ReactTs
     </div>
     // <DefaultFooter
