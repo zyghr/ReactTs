@@ -119,4 +119,37 @@ declare namespace API {
     sortField?: string;
     sortOrder?: string;
   };
+  // {
+  //   "bizorgId": "E1F091BCA06C66BBE05397D55C0A3B51",
+  //   "code": "ZCWX8b454ff320161025a2e88d391051",
+  //   "delState": 1,
+  //   "deptName": "其他部门",
+  //   "id": "ZCWX8b454ff320161025a2e88d391051",
+  //   "id4a": "ZCWX8b454ff320161025a2e88d391051",
+  //   "loginName": "huxiaoli@zcwx.yn.csg.cn",
+  //   "name": "胡小丽",
+  //   "password": "$2a$10$Egp1/gvFlt7zhlXVfEFw4OfWQCGPw0ClmMcc6FjTnvXNRVf9zdMRa",
+  //   "sexCode": 1,
+  //   "state": 1
+  // }
+  // roleCodes:[
+  //   "r181cd929869",
+  //   "r183f3653593"
+  // ]
+
+  // 权限管理-用户管理
+  type UserList = {
+    data?: permissonUserManItem[];
+    /** 列表的内容总数 */
+    total?: number;
+    success?: boolean;
+  }
+
+  type permissonUserManItem = {
+    id?: string;
+    name?:string;
+    state?:number;
+    deptName?:string;
+    loginName?:string;
+  }
 }

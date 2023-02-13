@@ -2,7 +2,7 @@ import { Button, Table } from 'antd';
 import type { PaginationProps } from 'antd';
 import { useState, useEffect } from 'react';
 import type { ColumnsType } from 'antd/es/table';
-import { getDeptListData } from '@/services/ant-design-pro/deptManageApi';
+import { getDeptListData } from '@/services/API/deptManageApi';
 
 const columns: ColumnsType<API.deptListItem> = [
   {

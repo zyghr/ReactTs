@@ -66,12 +66,12 @@ export default [
     routes: [
       {
         path: '/permissionManagement',
-        redirect: '/permissionManagement/userManagement',
+        redirect: '/permissionManagement/userManagement.ts',
       },
       {
-        path: '/permissionManagement/userManagement',
+        path: '/permissionManagement/userManagement.ts',
         name: 'userManagement',
-        component: './PermissionManagement/userManagement',
+        component: './PermissionManagement/userModule',
       },
     ],
   },
