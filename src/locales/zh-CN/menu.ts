@@ -51,6 +51,6 @@ export default {
   'menu.editor.koni': '拓扑编辑器',
   'menu.dept-manage': '部门管理',
   'menu.PermissionManagement': '权限管理',
-  'menu.PermissionManagement.userManagement': '用户管理',
-  'menu.PermissionManagement.roleManagement': '角色管理'
+  'menu.PermissionManagement.UserPermissManagement': '用户管理',
+  'menu.PermissionManagement.RolePermissManagement': '角色管理',
 };

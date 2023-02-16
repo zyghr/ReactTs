@@ -56,22 +56,27 @@ export default [
   {
     path: '/dept',
     name: 'dept-manage',
-    icon: 'table',
+    icon: 'BankFilled',
     component: './DeptManage',
   },
   {
     path: '/permissionManagement',
     name: 'PermissionManagement',
-    icon: 'table',
+    icon: 'CiCircleFilled',
     routes: [
       {
         path: '/permissionManagement',
         redirect: '/permissionManagement/userManagement.ts',
       },
       {
-        path: '/permissionManagement/userManagement.ts',
-        name: 'userManagement',
-        component: './PermissionManagement/userModule',
+        name: 'UserPermissManagement',
+        path: '/permissionManagement/user',
+        component: './PermissionManagement/user',
+      },
+      {
+        name: 'RolePermissManagement',
+        path: '/permissionManagement/role',
+        component: './PermissionManagement/role/roleManage.tsx',
       },
     ],
   },

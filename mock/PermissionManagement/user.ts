@@ -1,19 +1,18 @@
-import { Request,Response} from 'express';
-var md5 = require('md5');
+import { Request, Response } from 'express';
+// var md5 = require('md5');
 import { parse } from 'url';
 
-
-const genList = (current:number,pageSize:number) => {
-  const tableListDataSource:API.permissonUserManItem[] = [];
+const genList = (current: number, pageSize: number) => {
+  const tableListDataSource: API.permissonUserManItem[] = [];
 
   for (let i = 0; i < pageSize; i += 1) {
     const index = (current - 1) * 10 + i;
     tableListDataSource.push({
-      name: "胡小丽",
+      name: '胡小丽',
       state: 1,
-      id: md5(`${index}id`),
-      deptName: "其他部门",
-      loginName: "huxiaoli@zcwx.yn.csg.cn",
+      id: `${index}id`,
+      deptName: '其他部门',
+      loginName: 'huxiaoli@zcwx.yn.csg.cn',
       // updatedAt: moment().format('YYYY-MM-DD'),
       // createdAt: moment().format('YYYY-MM-DD'),
       // progress: Math.ceil(Math.random() * 100),
@@ -21,7 +20,7 @@ const genList = (current:number,pageSize:number) => {
   }
 
   return tableListDataSource;
-}
+};
 
 let tableListDataSource = genList(1, 100);
 
@@ -33,9 +32,9 @@ function getList(req: Request, res: Response, u: string) {
   const { current = 1, pageSize = 10 } = req.query;
   const params = parse(realUrl, true).query as unknown as API.PageParams &
     API.RuleListItem & {
-    sorter: any;
-    filter: any;
-  };
+      sorter: any;
+      filter: any;
+    };
 
   let dataSource = [...tableListDataSource].slice(
     ((current as number) - 1) * (pageSize as number),
@@ -97,5 +96,5 @@ function getList(req: Request, res: Response, u: string) {
 }
 
 export default {
-  'GET /user/list': getList
+  'GET /user/list': getList,
 };
